@@ -8,14 +8,11 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Database connection
 connectDB();
 
-// Routes
 app.use('/api', apiRoutes);
 
 const PORT = process.env.PORT || 5000;

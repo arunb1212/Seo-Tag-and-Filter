@@ -59,7 +59,6 @@ Do not include any markdown formatting, code blocks, or explanations outside the
   const rawContent = result.choices[0].message.content;
 
   try {
-    // Sometimes models wrap json in markdown
     let jsonStr = rawContent.trim();
     if (jsonStr.startsWith('```json')) {
       jsonStr = jsonStr.substring(7);
@@ -70,7 +69,6 @@ Do not include any markdown formatting, code blocks, or explanations outside the
       jsonStr = jsonStr.substring(0, jsonStr.length - 3);
     }
     
-    // Find the first { and last }
     const startIdx = jsonStr.indexOf('{');
     const endIdx = jsonStr.lastIndexOf('}');
     if (startIdx !== -1 && endIdx !== -1) {
@@ -79,7 +77,6 @@ Do not include any markdown formatting, code blocks, or explanations outside the
 
     const parsedData = JSON.parse(jsonStr);
     console.log(parsedData);
-    // Ensure structure
     if (!parsedData.category) parsedData.category = 'Unknown';
     if (!Array.isArray(parsedData.tags)) parsedData.tags = [];
     if (!Array.isArray(parsedData.filters)) parsedData.filters = [];
