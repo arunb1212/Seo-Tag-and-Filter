@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "https://seo-tag-and-filter.vercel.app/"
+  origin: "https://seo-tag-and-filter.vercel.app"
 }));
 app.use(express.json());
 
