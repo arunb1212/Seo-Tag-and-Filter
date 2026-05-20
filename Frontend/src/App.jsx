@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Sparkles, AlertCircle, ShoppingBag, AlignLeft, Tag, Leaf, AlignRight } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'seo-tag-and-filter.railway.internal';
-
+const API_URL =  'seo-tag-and-filter.railway.internal';
+// import.meta.env.VITE_API_URL ||
 function App() {
   const [formData, setFormData] = useState({ product_name: '', description: '' });
   const [loading, setLoading] = useState(false);
