@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Sparkles, AlertCircle, ShoppingBag, AlignLeft, Tag, Leaf, AlignRight } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'seo-tag-and-filter.railway.internal';
+
 function App() {
   const [formData, setFormData] = useState({ product_name: '', description: '' });
   const [loading, setLoading] = useState(false);
@@ -24,7 +26,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/generate-tags', {
+      const response = await fetch(`${API_URL}/api/generate-tags`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
