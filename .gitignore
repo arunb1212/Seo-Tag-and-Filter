@@ -5,3 +5,6 @@ dist/
 build/
 .env.local
 .env.*.local
+
+backend/.env
+node_modules*
